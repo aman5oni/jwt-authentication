@@ -20,11 +20,15 @@ body {
   padding: 1rem 3rem;
   padding-bottom: 2rem;
   border-radius: 0.5rem;
-  border-top: rgb(80, 98, 255) 0.5rem solid;
+  border-top: rgb(255, 0, 0) 0.5rem solid;
 }
 
 h2 {
   margin: 1rem 0;
+}
+
+h1 {
+  color: black;
 }
 
 form {
@@ -47,8 +51,8 @@ input {
 }
 
 button {
-  background-color: rgb(80, 98, 255);
-  color: white;
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
   border: none;
   padding: 0.5rem;
   font-size: 1rem;
@@ -59,13 +63,13 @@ button {
 
 span a {
   text-decoration: none;
-  color: rgb(80, 98, 255);
+  color: rgb(255, 0, 0);
 }
 
 .private {
   height: 100vh;
   width: 100vw;
-  background-color: rgb(80, 98, 255);
+  background-color: rgb(255, 0, 0);
   color: white;
   display: flex;
   justify-content: center;

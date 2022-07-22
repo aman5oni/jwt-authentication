@@ -19,15 +19,17 @@ const Cards = () => {
             withCredentials: true
           }
         );
+        console.log(data);
         if (!data.status) {
           removeCookie("jwt");
           navigate("/login");
         } else
-          toast(`Hi ${data.user} 🦄`, {
+          toast(`Hi ${data.name} 🦄`, {
             theme: "dark"
           });
       }
     };
+
     verifyUser();
   }, [cookies, navigate, removeCookie]);
 
@@ -38,7 +40,7 @@ const Cards = () => {
   return (
     <>
       <div className="private">
-        <h1>Super Secret Page</h1>
+        <h1>Welcome</h1>
         <button onClick={logOut}>Log out</button>
       </div>
       <ToastContainer />

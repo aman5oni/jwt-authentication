@@ -16,7 +16,7 @@ function Login() {
   const [values, setValues] = useState({ email: "", password: "" });
   const generateError = (error) =>
     toast.error(error, {
-      position: "bottom-right",
+      position: "bottom-right"
     });
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -24,7 +24,7 @@ function Login() {
       const { data } = await axios.post(
         "http://localhost:4001/login",
         {
-          ...values,
+          ...values
         },
         { withCredentials: true }
       );
@@ -37,8 +37,8 @@ function Login() {
           navigate("/");
         }
       }
-    } catch (ex) {
-      console.log(ex);
+    } catch (error) {
+      console.log(error);
     }
   };
   return (

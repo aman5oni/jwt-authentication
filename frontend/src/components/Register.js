@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
 function Register() {
-  const [cookies] = useCookies(["cookie-name"]);
+  const [cookies] = useCookies([]);
   const navigate = useNavigate();
   useEffect(() => {
     if (cookies.jwt) {
@@ -12,18 +12,18 @@ function Register() {
     }
   }, [cookies, navigate]);
 
-  const [values, setValues] = useState({ email: "", password: "" });
+  const [values, setValues] = useState({ name: "", email: "", password: "" });
   const generateError = (error) =>
     toast.error(error, {
-      position: "bottom-right",
+      position: "bottom-right"
     });
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/register",
+        "http://localhost:4001/register",
         {
-          ...values,
+          ...values
         },
         { withCredentials: true }
       );
@@ -36,14 +36,25 @@ function Register() {
           navigate("/");
         }
       }
-    } catch (ex) {
-      console.log(ex);
+    } catch (error) {
+      console.log(error);
     }
   };
   return (
     <div className="container">
       <h2>Register Account</h2>
       <form onSubmit={(e) => handleSubmit(e)}>
+      <div>
+          <label htmlFor="name">Name</label>
+          <input
+            type="name"
+            name="name"
+            placeholder="name"
+            onChange={(e) =>
+              setValues({ ...values, [e.target.name]: e.target.value })
+            }
+          />
+        </div>
         <div>
           <label htmlFor="email">Email</label>
           <input
