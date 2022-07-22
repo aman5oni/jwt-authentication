@@ -15,7 +15,8 @@ function Register() {
   const [values, setValues] = useState({ name: "", email: "", password: "" });
   const generateError = (error) =>
     toast.error(error, {
-      position: "bottom-right"
+      position: "bottom-right",
+      theme:"dark"
     });
   const handleSubmit = async (event) => {
     event.preventDefault();
