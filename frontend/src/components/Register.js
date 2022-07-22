@@ -29,8 +29,9 @@ function Register() {
       );
       if (data) {
         if (data.errors) {
-          const { email, password } = data.errors;
-          if (email) generateError(email);
+          const { name,email, password } = data.errors;
+          if (name) generateError(name);
+          else if (email) generateError(email);
           else if (password) generateError(password);
         } else {
           navigate("/");
